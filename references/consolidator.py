@@ -1,4 +1,3 @@
-import os
 import re
 from pathlib import Path
 
@@ -16,7 +15,7 @@ class EpubConsolidator:
     def remove_html_tags_and_empty_lines(self, text):
         # Remove all spaces and tabs first
         text = re.sub(r"\s+", " ", text)  # This collapses all whitespace into single spaces for cleaner processing
-        
+
         # Insert a newline before the start and after the end of <p> and <h1> tags
         text = re.sub(r"<div[^>]*>", "", text)
         text = re.sub(r"</div>", "\n", text)
@@ -47,7 +46,7 @@ class EpubConsolidator:
         # Split text into lines and remove empty lines
         lines = text.split('\n')
         non_empty_lines = [line for line in lines if line.strip() != '']
-        
+
         return '\n'.join(non_empty_lines)
         #return text
 
