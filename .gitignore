@@ -2,3 +2,4 @@ __pycache__
 /tmp_books
 books_dataset.arrow
 books_list.json
+.DS_Store
